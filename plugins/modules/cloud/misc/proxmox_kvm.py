@@ -871,8 +871,10 @@ def create_vm(module, proxmox, vmid, newid, node, name, memory, cpu, cores, sock
             del kwargs['scsi']
         if 'ide' in kwargs:
             del kwargs['ide']
-        if 'net' in kwargs:
-            del kwargs['net']
+# update of network interfaces is supported
+# TODO resuse MAC if none is specified
+#        if 'net' in kwargs:
+#            del kwargs['net']
         if 'force' in kwargs:
             del kwargs['force']
         if 'pool' in kwargs:
